@@ -1,0 +1,14 @@
+test6:
+  restart: always
+  environment:
+    - PKG_RELEASE=1~stretch
+  expose:
+    - 80/tcp
+  memswap_limit: 0
+  labels:
+    aliyun.scale: '1'
+  shm_size: 0
+  image: 'nginx:stable'
+  memswap_reservation: 0
+  kernel_memory: 0
+  mem_limit: 0
