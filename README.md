@@ -1,3 +1,8 @@
+## pip install
+```
+pip install aliyunswarm
+```
+
 ## 集群接入点地址：
 ```
 参考：
