@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
       name='aliyunswarm',
       python_requires='>={}.{}'.format(*REQUIRED_PYTHON),
-      version='0.0.17',
+      version='0.0.18',
       author='rocky',
       author_email='lingyu.cheng@gmail.com',
       description='aliyun swarm api',
