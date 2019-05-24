@@ -20,13 +20,16 @@ def auto_handle_http_response(http_func):
     def wrapper(*args, **kwargs):
         try:
             status, result = http_func(*args, **kwargs)
-            result_str = result_2_json(result)
+            # result_str = result_2_json(result)
             if status >= 200 and status < 300:
-                msg = {'status': status, 'msg': '%s succ, result: %s' % (http_func.__name__, result_str)}
+                # msg = {'status': status, 'msg': '%s succ, result: %s' % (http_func.__name__, result_str)}
+                msg = {'status': status, 'msg': result}
             else:
-                msg = {'status': status, 'msg': '%s fail, result: %s' % (http_func.__name__, result_str)}
+                # msg = {'status': status, 'msg': '%s fail, result: %s' % (http_func.__name__, result_str)}
+                msg = {'status': status, 'msg': result}
         except Exception as e:
-            msg = {'status': 500, 'msg': '%s fail, exception: %s' % (http_func.__name__, str(e))}
+            # msg = {'status': 500, 'msg': '%s fail, exception: %s' % (http_func.__name__, str(e))}
+            msg = {'status': 500, 'msg': e}
         print(msg)
         return msg
     return wrapper
